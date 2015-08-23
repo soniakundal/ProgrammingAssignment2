@@ -3,30 +3,24 @@
 ## inverse of a matrix in case it has been computed before. If not, 
 ## it computes the inverse of the matrix and stores the computed value 
 ## in the variable x_inverse and returns it from the cache the next time the 
-## user asks to compute the inverse of that matrix. 
+## user asks to compute the inverse of the same matrix. 
 
 
 
 ## makeCacheMatrix takes an invertible matrix x as the input argument and 
-## returns a list of four functions. 
-## the first element of the list, set, is a function that assigns the value 
-## of the input matrix to the variable x.
-## the second element of the list, get, returns the matrix assigned to x.
-## the third element of the list, setinverse, assigns to x_inverse any value 
-## that is passed to it. The fourth element, getinverse, returns the value of the
+## returns a list of three functions. 
+## the first element of the list, get, returns the matrix assigned to x.
+## the second element of the list, setinverse, assigns to x_inverse any value 
+## that is passed to it. The third element, getinverse, returns the value of the
 ## variable x_inverse.
 
 
 makeCacheMatrix <- function(x = matrix()) {
         x_inverse <- NULL
-        set <- function(y) {
-                x <<- y
-                x_inverse <<- NULL
-        }
         get <- function() x
         setinverse <- function(b) x_inverse <<- b
         getinverse <- function() x_inverse
-        list(set = set, get = get,
+        list(get = get,
              setinverse = setinverse,
              getinverse = getinverse)
 }
