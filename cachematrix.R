@@ -4,6 +4,8 @@
 ## it computes the inverse of the matrix and stores the computed value 
 ## in the variable x_inverse and returns it from the cache the next time the 
 ## user asks to compute the inverse of the same matrix. 
+## It is based on the Example "Caching the Mean of a Vector" provided in the 
+## assignment description.
 
 
 
